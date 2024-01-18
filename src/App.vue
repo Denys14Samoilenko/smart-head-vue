@@ -71,11 +71,16 @@ export default {
          );
       },
    },
+   watch: {
+      isMenuOpen(newValue) {
+         document.body.classList.toggle('menu-open', newValue);
+      },
+   },
 }
 
 </script>
 
-<template>
+<template >
    <header class="header">
       <input class="filter" type="text" v-model="query" placeholder="Enter user name">
    </header>
@@ -141,6 +146,5 @@ export default {
       box-shadow: 0px 0px 8px #000;
       width: 80%;
    }
-
 }
 </style>

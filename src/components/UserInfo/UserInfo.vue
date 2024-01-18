@@ -91,7 +91,7 @@ export default {
       flex-direction: column;
       justify-content: space-between;
       background-color: #fff;
-      padding: 2rem;
+      padding: 1rem;
       border-radius: 5px;
       margin: 16px;
    }
