@@ -33,6 +33,7 @@ export default {
                console.error('Error adding user:', error);
             });
       },
+
       deleteUser(userId: number) {
          fetch(`${this.api_url}${userId}`, {
             method: 'DELETE',
@@ -44,15 +45,19 @@ export default {
                console.error('Error deleting user:', error);
             });
       },
+
       setUsers(res: any) {
          this.users = res.data
       },
+
       addUser(user: User) {
          this.users.unshift(user)
       },
+
       showUserInfo(userId: number) {
          this.user = this.users.find((user: User) => user.id === userId)
       },
+
       updateUser(updatedUser: User | undefined) {
          let currentUser = this.users.find((user) => user.id === updatedUser?.id)
          if (currentUser) {
@@ -60,6 +65,7 @@ export default {
             currentUser.address = updatedUser?.address ?? '';
          }
       },
+
       menuOpen() {
          this.isMenuOpen = !this.isMenuOpen
       }
@@ -77,7 +83,6 @@ export default {
       },
    },
 }
-
 </script>
 
 <template >
@@ -86,7 +91,7 @@ export default {
    </header>
 
    <UserInfo @is-modal-open="menuOpen" @update-user="updateUser" :isMenuOpen=isMenuOpen v-if="isMenuOpen" :user="user" />
-   <!-- v-if="user && Object.keys(user).length !== 0" -->
+
    <main class="main">
       <AddUserForm @add-user-submitted="addUser" />
 
@@ -98,6 +103,7 @@ export default {
             </li>
          </ul>
       </div>
+
       <p v-if="!filteredUsers.length">Users not found</p>
    </main>
 </template>

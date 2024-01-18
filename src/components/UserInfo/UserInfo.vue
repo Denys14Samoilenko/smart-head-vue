@@ -21,7 +21,6 @@ export default {
       }
    },
    methods: {
-
       closeModal() {
          this.$emit('update-user', this.updatedUser);
          this.$emit('is-modal-open', true);
@@ -31,6 +30,7 @@ export default {
       setIsUpdated() {
          this.isUpdated = true
       },
+
       saveInfo() {
          this.updatedUser.phone = this.phone
          this.updatedUser.address = this.address
@@ -52,21 +52,25 @@ export default {
 <template>
    <div class="modal">
       <div class="modal_content ">
-         <img class="modal_avatar" :src="user?.avatar" alt="">
+         <img class="modal_avatar" :src="user?.avatar" alt="User avatar">
+
          <div class="modal_info">
             <h2 class="modal_name">Full name: {{ getFullName }}</h2>
             <span>Email: </span>
             <a class="" :href="getUserEmailPath">{{ user?.email }}</a>
+
             <form class="modal_form">
                <label for=""> Phone:
                   <input class="modal_input" v-if="isUpdated" type="text" v-model="phone">
                   <p v-else>{{ updatedUser?.phone }}</p>
                </label>
+
                <label for=""> Address:
                   <input class="modal_input" v-if="isUpdated" type="text" v-model="address">
                   <p v-else>{{ updatedUser?.address }}</p>
                </label>
             </form>
+
             <div class="modal_buttons">
                <button v-if="!isUpdated" class="modal_button" @click="setIsUpdated">&#9998;</button>
                <button v-else class="modal_button" @click="saveInfo">Save</button>

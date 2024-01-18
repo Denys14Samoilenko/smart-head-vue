@@ -20,18 +20,17 @@ export default {
       deleteUser() {
          this.$emit('delete-user', this.user.id);
       },
+
       showUserInfo() {
          this.$emit('show-user-info', this.user.id);
          this.$emit('is-modal-open', false)
-
-         console.log(this.user);
-
       },
    },
    computed: {
       getUserEmailPath() {
          return 'mailto:' + this.user.email;
       },
+
       getFullName() {
          return `${this.user.first_name} ${this.user.last_name}`.trim();
       },
@@ -42,10 +41,12 @@ export default {
 <template>
    <div class="card user">
       <img class="user_avatar" :src="user.avatar" alt="user avatar">
+
       <div class="user_content">
          <h2 class="user_name" @click="showUserInfo">{{ getFullName }}</h2>
          <a class="user_email" :href="getUserEmailPath">{{ user.email }}</a>
       </div>
+
       <button class="user_button" @click="deleteUser">X</button>
    </div>
 </template>
@@ -77,11 +78,9 @@ export default {
       transition: color 0.5s;
       word-break: break-all;
 
-
       &:hover {
          color: #646cff;
          cursor: pointer;
-         ;
       }
    }
 

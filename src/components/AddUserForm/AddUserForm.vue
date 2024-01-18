@@ -43,6 +43,7 @@ export default {
 
          this.clearForm()
       },
+
       isValid(value: string, regex: RegExp, errorField: string) {
          if (!regex.test(value)) {
             this.errors[errorField] = `Invalid ${errorField.replace('_', ' ')}`;
@@ -62,11 +63,13 @@ export default {
       validateEmail() {
          this.isValid(this.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'email');
       },
+
       clearErrors() {
          for (const field in this.errors) {
             this.errors[field] = '';
          }
       },
+
       clearForm() {
          this.first_name = '';
          this.last_name = '';
@@ -88,15 +91,18 @@ export default {
             @blur="validateFirstName">
          <span class="error-message" :class="{ 'visible': errors.first_name !== '' }">{{ errors.first_name }}</span>
       </label>
+
       <label class="form_label" for="last_name">
          <input class="form_input" type="text" id="last_name" placeholder="Last Name" v-model="last_name"
             @blur="validateLastName">
          <span class="error-message" :class="{ 'visible': errors.last_name !== '' }">{{ errors.last_name }}</span>
       </label>
+
       <label class="form_label" for="email">
          <input class="form_input" type="email" id="email" placeholder="Email" v-model="email" @blur="validateEmail">
          <span class="error-message" :class="{ 'visible': errors.email !== '' }">{{ errors.email }}</span>
       </label>
+
       <input class="form_button" type="submit" value="Add user" :disabled="isSubmitDisabled">
    </form>
 </template>
@@ -113,7 +119,6 @@ export default {
    @media (min-width:640px) {
       flex-direction: row;
       justify-content: center;
-
    }
 
    &_label {
