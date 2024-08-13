@@ -110,6 +110,11 @@ export default {
 
 <style scoped lang="scss">
 .users {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 
    &_list {
       list-style: none;
@@ -119,7 +124,7 @@ export default {
       flex-wrap: wrap;
       align-items: center;
       gap: 18px;
-      max-width: 1024px;
+		min-width: 100% ;
    }
 
    &_item {
@@ -146,6 +151,8 @@ export default {
    height: 40px;
    width: 60%;
    transition: all 0.5s;
+	background-color: #fff;
+	color: #000;
 
    &:focus {
       background-color: #e5e5e5;

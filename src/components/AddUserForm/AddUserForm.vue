@@ -134,6 +134,8 @@ export default {
       border: 1px solid #000;
       font-size: 16px;
       height: 40px;
+		background-color: #fff;
+		color: #000;
 
       &:focus {
          background-color: #e5e5e5;
