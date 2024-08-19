@@ -89,6 +89,7 @@ export default {
    align-items: center;
    justify-content: center;
    background-color: rgba($color: #000000, $alpha: 0.7);
+	color: #000000;
 
    &_content {
       display: flex;
@@ -141,6 +142,8 @@ export default {
    &_input {
       padding: 8px;
       border-radius: 5px;
+		background-color: #fff;
+		color: #000000;
    }
 
 }

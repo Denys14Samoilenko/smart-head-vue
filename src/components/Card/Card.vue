@@ -73,7 +73,7 @@ export default {
 	&_name {
 		font-size: 32px;
 		margin: 0;
-		color: black;
+		color: black ;
 		transition: color 0.5s;
 		word-break: break-all;
 
